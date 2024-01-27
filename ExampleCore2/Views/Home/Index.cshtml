@@ -1,0 +1,15 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model ExampleCore2.Models.Product
+
+@*Asıl validasyon Model'de yapılıyor*@
+<form asp-controller="home" asp-action="index" method="post">
+    <input type="text" asp-for="id" /><span asp-validation-for="id"></span>@* asp-validation-for ile tek bir mesaj da gösterilebiliyor *@
+    <input type="text" asp-for="name" /> <span asp-validation-for="name"></span>
+    <input type="text" asp-for="description" /><span asp-validation-for="description"></span>
+    <input type="text" asp-for="category" /><span asp-validation-for="category"></span>
+    <button>Gönder</button>
+</form>
+
+@* Aşağıdaki kod yapısı ile validation kontrolleri tek bir yerde göstermek için kullanılır. *@
+<div asp-validation-summary="All">
+</div>
