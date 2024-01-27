@@ -12,6 +12,11 @@ namespace ExampleCore2.Controllers
         [HttpPost]
         public IActionResult Index(Product product)
         {
+            if(!ModelState.IsValid)
+            {
+                
+                return View(product);
+            }
             ViewBag.id = product.id;
             ViewBag.name = product.name;
             ViewBag.description = product.description;
